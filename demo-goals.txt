@@ -1,0 +1,76 @@
+1) Demonstrate basic Git/GitHub workflow by:
+
+* create a Latex project folder called "git-practice"
+* open the Latex project in Atom (with Latex tools installed)
+  Navigate to the folder with the Latex project files.
+  Do "atom ." from a command line prompt
+* assume the project starting point is 8 paragraphs of lorem ipsum text in a file called section_01.tex
+Use the lorem ipsum generator here https://loremipsum.io/generator/?n=8&t=p
+* create a local git repository using the Atom git integration
+* stage the files, type a commit message of "Initial commit", (optionally) view the git diffs in Atom, create a detached repository
+* Go to your GitHub account i.e. http://www.github.com/darrenhusa
+* create a new remote repository with the same name as the local git repository "git-practice"
+* run the command git remote add origin https://github.com/darrenhusa/git-practice.git from the command line
+* Now, publish or push the local changes to the remote repository
+* Do a refresh of http://www.github.com/darrenhusa/git-practice.git
+* You should now see your Latex project on your remote repository
+
+* Now edit your document -- i.e. make changes
+* Delete one paragraph and copy in some new section 01 text
+* View your project now in the Atom Git sidebar.  You will see that there are changes since your last commit
+* Now, stage your changes, (optionally) view your git diffs within atom (by clicking the filename in the middle)
+Type a commit message and push the local changes to your remote.
+
+* Refresh your GitHub remote repository.  You should now see 2 commits indicated.
+* View git diffs from GitHub by
+
+* Run the following commands in your command line
+git status
+git log - note the commit ids for the two current commits.
+
+Example output:
+commit 25d212f92b82369b65f5003e5c327e58fb2fdbb6 (HEAD -> master, origin/master)
+Author: Darren Henderson <darrenh@Darrens-MacBook-Pro.local>
+Date:   Fri Aug 21 16:11:28 2020 -0500
+
+    Edit section 1.
+
+commit 8cd00857a442adc85c8aa20f481a726e985fbda3
+Author: Darren Henderson <darrenh@Darrens-MacBook-Pro.local>
+Date:   Fri Aug 21 16:07:50 2020 -0500
+
+
+* Demonstrate reverting to an EARLIER COMMIT or version of the Latex project
+* Close Atom if needed
+* From the command line, run git checkout commit#1-id
+i.e. git checkout 8cd00857a442adc85c8aa20f481a726e985fbda
+
+* Now open this "first" version of the Latex document with Atom by running atom .
+* Note, that section_01.tex is the ORIGINAL file without the deletion and the additions
+* Close Atom if necessary.
+
+* To revert to the "master" branch, run git checkout master.
+* Now if you view your project in Atom it is again the LATEST project.
+
+* Demonstrate one person working on ONE git project using multiple computers?
+* You have already seen the workflow of one person on one local machine.
+* Use git clone to a NEW computer -- maybe my Windows Dell Laptop?
+* Make a small changes and push to the SAME remote repository.  Would constitute a THIRD commit.
+
+* One caveat when multiple users work on the same document.  You must obviously be worried about document COLLISSIONS i.e. competing or conflicting changes to the same part of a document.
+
+* This can be MITIGATED some if the TEAM (e.g. Faculty Handbook Committee) agree to work on DIFFERENT sections. Example: one person edits section_01 and another person edits section_02.
+* If a NEW team member comes on to work on a section 03, the best practice would be to GIT CLONE the latest repository from the remote.
+
+* Each user would do git pushs of there "local" edits to the remote. The remote therefore becomes the MASTER document.
+* If one users local git repository becomes OUT-OF-STEP with the remote that user can always do a git pull to update their local with the latest from the remote.
+
+* Remember it is more difficult to manage a multi-user workflow. Hopefully, I have described the process enough so that you see some of the real advantages.
+
+* Finally, it is possible to git tag a particular commit as important.  This could function to serve as a baseline version of a document.
+* One tag could represent the "OLD" faculty handbook.  The NEXT tag might represent the version as it was supposedly in 2018-2020. etc. etc.
+* TODO - Lookup in the free git book how to do a git tag?
+
+And since this is a Latex project.  The tex files can be converted to a PDF.  This means you can have any version of the FACULTY HANDBOOK that you want.
+
+Really, really powerful stuff!!
