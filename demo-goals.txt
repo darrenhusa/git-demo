@@ -62,15 +62,27 @@ i.e. git checkout 8cd00857a442adc85c8aa20f481a726e985fbda
 * This can be MITIGATED some if the TEAM (e.g. Faculty Handbook Committee) agree to work on DIFFERENT sections. Example: one person edits section_01 and another person edits section_02.
 * If a NEW team member comes on to work on a section 03, the best practice would be to GIT CLONE the latest repository from the remote.
 
-* Each user would do git pushs of there "local" edits to the remote. The remote therefore becomes the MASTER document.
+* Each user would do git pushs of their "local" edits to the remote. The remote therefore becomes the MASTER document.
 * If one users local git repository becomes OUT-OF-STEP with the remote that user can always do a git pull to update their local with the latest from the remote.
 
 * Remember it is more difficult to manage a multi-user workflow. Hopefully, I have described the process enough so that you see some of the real advantages.
 
 * Finally, it is possible to git tag a particular commit as important.  This could function to serve as a baseline version of a document.
-* One tag could represent the "OLD" faculty handbook.  The NEXT tag might represent the version as it was supposedly in 2018-2020. etc. etc.
-* TODO - Lookup in the free git book how to do a git tag?
+* One tag could represent the "OLD" faculty handbook.  The NEXT tag might represent the version as it was supposedly in 2018-2019. etc. etc.
+* Example:
+git checkout 8cd0085
+git tag -a v1.0 -m "2018-19 Faculty Handbook"
+
+git checkout master
+git checkout 25d212f
+git tag -a v1.1 -m "2019-20 Faculty Handbook"
+
+* NOTE: you do NOT need to specify the entire commit-id--only enough to make sure the results are unique
+
 
 And since this is a Latex project.  The tex files can be converted to a PDF.  This means you can have any version of the FACULTY HANDBOOK that you want.
 
 Really, really powerful stuff!!
+
+
+GIT REFERENCE: https://git-scm.com/book/en/v2
